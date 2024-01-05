@@ -1,6 +1,3 @@
-# blog-source
-
-
 # hexo
 
 下面是如何操作的具体步骤：
@@ -25,20 +22,22 @@ hexo new
 
 hexo generate
 
+hexo deploy -m "自定义提交信息”
+
 1. 然后将这些生成的内容复制或者移动到 <username>.github.io 的仓库
-
-cp -r ./public/* ../<username>.github.io
-
-1. 然后到 <username>.github.io 的仓库，提交并且推送这些改动：
-
-cd ../<username>.github.io
-git add .
-git commit -m "hexo updated"
-git push origin master
 
 就完成了！你的 <username>.github.io 仓库就会更新，你的博客就会展示出最新的内容。同时你的 blog-source 仓库保留了你的Hexo源文件，以备后续更新博文用。
 
 
-hexo clean //清除缓存文件 (db.json) 和已生成的静态文件(public)
-hexo generate //生成静态文件到public文件夹，简写为 hexo g
-hexo server //开始服务器，简写为hexo s。默认情况下，此命令同时执行hexo generate
+
+`npm install hexo-deployer-git --save`
+
+npm install hexo-renderer-pug hexo-renderer-stylus --save. 插件渲染器
+
+俩都是升级博客站点的：
+
+https://www.cnblogs.com/ywang-wnlo/p/Hexo-plugins.html#hexo-abbrlink
+
+https://xinyeah.github.io/deploy-hexo-site/
+
+然后对于博客进行设计图片头像之类的就另外：
